@@ -16,7 +16,7 @@ public class ant_controller : MonoBehaviour {
 		float targetAngle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
 		transform.rotation = 
 			Quaternion.Slerp( transform.rotation, 
-			                 Quaternion.Euler( 0, 0, targetAngle ), 
+			                 Quaternion.Euler( 0, 0, targetAngle +90), 
 			                 turn_speed * Time.deltaTime );
 	}
 }
