@@ -43,5 +43,16 @@ public class fly_controller : MonoBehaviour {
 			                 10 * Time.deltaTime );
 		
 	}
+
+	void OnMouseDown() {
+		Destroy (this.gameObject);
+	}
+
+	void OnCollisionEnter(Collision col) {
+		if (col.gameObject.name == "pie_prefab"){
+			Debug.Log ("hit pie");
+		}
+	}
+
 }
 

@@ -43,4 +43,9 @@ public class spawn_flies : MonoBehaviour {
 		Instantiate( fly, transform.position, transform.rotation);
 
 	}
+
+	void OnMouseDown() {
+		Debug.Log ("mouse down");
+		Destroy (this.gameObject);
+	}
 }
