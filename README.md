@@ -3,21 +3,24 @@ it's piegame
 
 ben's notes:
 
-	i started working in c# because i couldnt get js to work for the life of me.  it would
-	probably be pretty easy to switch if thats something we wanted to do, but c# is pretty
-	straighforward as well.  i don't really care. jimmy you probably feel more strongly
-	than i do.
+	things that need doing:
+		1.  images.  we need to fix the fly one (and add dynamite), maybe change the
+		wood background to a picnic blanket on grass or something, fix the transparency
+		of the pie, add an explosion animation sprite sheet (i put in two, but we
+		need to play around with them) and change any images we dont like.
 
-	i made a thing that has one fly that goes towards the center and an ant that follows 
-	 the mouse.  in the real game the mouse position would be switched with the tap or
-	swipe location.  also we can obviously change images/make things transparent at will.
+		
+		2.  damage.  right now the flies do periodic damage and the mice do continuous
+		which i like but we need to decide if we want to damage the pie via just making
+		it smaller or actually taking out pieces. 
 
-	i started to look at how to randomly spawn enemies but didnt get all taht far.  as far
-	as i know now it involves making the enemies prefab objects (which i did) which i guess
-	allows you to attach scripts to them.  and one script i guess we would attach is where
-	to spawn enemies.  
-
-	unity is cool
-
-	unity is WEIRD
+		3.  intro/game over screens.  no idea how to go about doing these but i bet 
+		unity has a simple way.
 	
+		4.  some method of score keeping.  it could just be time survived?
+
+
+		5.  actually use phone input not just mouse clicking.
+
+		6.  in the enemy spawner make the spawn rate speed up as the game goes on. 
+		maybe also make the enemies move faster?  or do more damage?
