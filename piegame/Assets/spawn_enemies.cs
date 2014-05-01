@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class spawn_flies : MonoBehaviour {
+public class spawn_enemies : MonoBehaviour {
 
-	public GameObject fly;
+	public GameObject[] enemies;
 	public float delay = 0f;
-	public float rate = 1f;
+	public float rate = 5f;
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("spawn_fly", delay, rate);
+		InvokeRepeating ("spawn_enemy", delay, rate);
 	}
 
 	Vector3 rand_location () {
@@ -38,14 +38,16 @@ public class spawn_flies : MonoBehaviour {
 		return pos;
 	}	
 
-	void spawn_fly() {	
+	void spawn_enemy() {	
 		transform.position = rand_location ();
-		Instantiate( fly, transform.position, transform.rotation);
+		int ind = Random.Range (0, enemies.Length);
+		Instantiate( enemies[ind], transform.position, transform.rotation);
 
 	}
 
-	void OnMouseDown() {
-		Debug.Log ("mouse down");
-		Destroy (this.gameObject);
+	void OnCollisionEnter2D(Collision2D col) {
+		Debug.Log ("enemy collision");
+		
 	}
+
 }
