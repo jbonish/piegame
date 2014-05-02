@@ -9,7 +9,8 @@ public class fly_controller : MonoBehaviour {
 	public int fuse_length;  // number of iterations while touching pie before BANG
 	private int current_fuse;
 	private GameObject pie;
-	public float damage = .9f;  //  reduces size to damage * old size
+	public float damage = 0.9f;  
+	public GameObject explosion;
 
 	// Use this for initialization
 	void Start () {
@@ -49,30 +50,31 @@ public class fly_controller : MonoBehaviour {
 		
 		if (on_pie == true) {
 			if (current_fuse >= fuse_length) {
-				Debug.Log ("BANG");
 				Destroy (this.gameObject);
 
 				Vector3 temp = pie.transform.localScale;
+				Debug.Log (temp.x);
 				temp.x *= damage;
 				temp.y *= damage;
 				pie.transform.localScale = temp;
+
+				GameObject exp = (GameObject)Instantiate (explosion, transform.position, transform.rotation);
+				Destroy (exp, 1.333f);
 			}
 			current_fuse += 1;
+		} else {
+			current_fuse = 0;
 		}
-	
 	}
-
+	
 	void OnMouseDown() {
 		Destroy (this.gameObject);
-		Debug.Log ("boom");
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.name == "pie_prefab") {
 			pie = col.gameObject;
-			Debug.Log ("fly hit pie");
 			on_pie = true;
-			current_fuse = 0;
 		}
 
 	}

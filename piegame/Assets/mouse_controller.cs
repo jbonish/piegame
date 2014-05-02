@@ -39,7 +39,6 @@ public class mouse_controller : MonoBehaviour {
 
 
 		if (on_pie == true) {
-			Debug.Log ("mouse eating pie");
 			Vector3 temp = pie.transform.localScale;
 			temp.x *= damage;
 			temp.y *= damage;

@@ -47,9 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ant_controller.cs" />
+     <Compile Include="Assets\death_script.cs" />
      <Compile Include="Assets\fly_controller.cs" />
      <Compile Include="Assets\mouse_controller.cs" />
+     <Compile Include="Assets\pie_controller.cs" />
      <Compile Include="Assets\spawn_enemies.cs" />
+     <Compile Include="Assets\startup.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
