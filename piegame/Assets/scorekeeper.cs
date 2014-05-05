@@ -5,26 +5,16 @@ public class scorekeeper : MonoBehaviour {
 	private float current_time;
 	private float start_time;
 	private int font_size = 30;
-	private string last_state;
 	private string timeText;
 
 	// Use this for initialization
 	void Start () {
 		start_time = Time.time;
 		DontDestroyOnLoad (this.gameObject);
-		last_state = "game_over";
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		/*string current_state = Application.loadedLevelName;
-		if (current_state == "game" && last_state == "start") {
-			start_time = 0;
-			last_state = current_state;
-		} else if (last_state != current_state) {
-			last_state = current_state;
-		}
-*/
 	}
 
 	void OnGUI() {
@@ -46,7 +36,6 @@ public class scorekeeper : MonoBehaviour {
 	
 			GUI.skin.button.fontSize = 15;
 			if (GUI.Button (new Rect (Screen.width/2 -100, Screen.height - 100, 200, 40), "RETURN TO MENU")) {
-				Debug.Log ("button press");
 				start_time = Time.time;
 				Destroy (this.gameObject);
 				Application.LoadLevel (0);
@@ -57,6 +46,16 @@ public class scorekeeper : MonoBehaviour {
 			if (GUI.Button (new Rect (Screen.width/2-100, Screen.height-200, 200, 100), "START")) {
 				start_time = Time.time;
 				Application.LoadLevel (1);
+			}
+		} else if (Application.loadedLevelName == "instructions") {
+			GUI.color = Color.black;
+			GUI.skin.label.fontSize = 40;
+			GUI.Label (new Rect (350, 180, 500, 100), "Swipe the Flies");
+			GUI.Label (new Rect (350, 400, 500, 100), "Hit the Mice");
+			GUI.color = Color.white;
+			if (GUI.Button (new Rect (Screen.width -275, Screen.height - 100, 250, 80), "CONTINUE")) {
+				start_time = Time.time;
+				Application.LoadLevel (2);
 			}
 		}
 	}

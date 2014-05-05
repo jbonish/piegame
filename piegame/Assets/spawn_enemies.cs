@@ -19,7 +19,7 @@ public class spawn_enemies : MonoBehaviour {
 		float current_time = (Time.time - start_time);
 		rate = 3 - current_time/60;
 		if (rate <= .3) {
-			rate = 3;
+			rate = .3f;
 		}		
 		if ((current_time - last_time) >= rate) {
 			spawn_enemy ();

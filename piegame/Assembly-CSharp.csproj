@@ -49,6 +49,7 @@
      <Compile Include="Assets\ant_controller.cs" />
      <Compile Include="Assets\death_script.cs" />
      <Compile Include="Assets\fly_controller.cs" />
+     <Compile Include="Assets\instruction.cs" />
      <Compile Include="Assets\mouse_controller.cs" />
      <Compile Include="Assets\pie_controller.cs" />
      <Compile Include="Assets\scorekeeper.cs" />
