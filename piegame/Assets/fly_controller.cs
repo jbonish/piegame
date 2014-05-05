@@ -59,6 +59,7 @@ public class fly_controller : MonoBehaviour {
 					to_explode = true;
 					GetComponent<SpriteRenderer>().color = Color.red;
 					move_speed = 3;
+					damage = .85f;
 				}
 				tapped = false;
 			}

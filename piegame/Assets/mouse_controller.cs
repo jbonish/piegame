@@ -31,7 +31,7 @@ public class mouse_controller : MonoBehaviour {
 				if (moved == true && tapped == true) {
 					GetComponent<SpriteRenderer>().color = Color.red;
 					move_speed = 2;
-					damage = .9994f;
+					damage = .9985f;
 				} else if (tapped == true && moved == false) {
 					GameObject swt = (GameObject)Instantiate (squeak, transform.position, transform.rotation);
 					Destroy (swt, 0.5f);
