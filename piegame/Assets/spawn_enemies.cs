@@ -6,10 +6,25 @@ public class spawn_enemies : MonoBehaviour {
 	public GameObject[] enemies;
 	public float delay = 0f;
 	public float rate = 5f;
+	private float start_time;	
+	private float last_time;
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating ("spawn_enemy", delay, rate);
+		//InvokeRepeating ("spawn_enemy", delay, rate);
+		start_time = Time.time;
+	}
+
+	void Update() {
+		float current_time = (Time.time - start_time);
+		rate = 3 - current_time/60;
+		if (rate <= .3) {
+			rate = 3;
+		}		
+		if ((current_time - last_time) >= rate) {
+			spawn_enemy ();
+			last_time = current_time;
+		}
 	}
 
 	Vector3 rand_location () {
@@ -44,10 +59,4 @@ public class spawn_enemies : MonoBehaviour {
 		Instantiate( enemies[ind], transform.position, transform.rotation);
 
 	}
-
-	void OnCollisionEnter2D(Collision2D col) {
-		Debug.Log ("enemy collision");
-		
-	}
-
 }

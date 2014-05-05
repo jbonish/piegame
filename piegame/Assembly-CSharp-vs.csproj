@@ -51,6 +51,7 @@
      <Compile Include="Assets\fly_controller.cs" />
      <Compile Include="Assets\mouse_controller.cs" />
      <Compile Include="Assets\pie_controller.cs" />
+     <Compile Include="Assets\scorekeeper.cs" />
      <Compile Include="Assets\spawn_enemies.cs" />
      <Compile Include="Assets\startup.cs" />
   </ItemGroup>

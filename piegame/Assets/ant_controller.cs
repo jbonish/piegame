@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ant_controller : MonoBehaviour {
@@ -11,7 +11,6 @@ public class ant_controller : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		turn_speed = 5;
-		start_time = Time.time;
 	}
 	
 	// Update is called once per frame
@@ -25,10 +24,5 @@ public class ant_controller : MonoBehaviour {
 			                 turn_speed * Time.deltaTime );
 	}
 
-	void OnGUI() {
-		float t = Time.time - start_time;
-		GUI.color = color;
-		GUI.skin.label.fontSize = font_size;
-		GUI.Label (new Rect (350, 0, 100, 100), t.ToString ("F2"));
-	}
+
 }

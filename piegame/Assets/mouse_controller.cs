@@ -6,8 +6,12 @@ public class mouse_controller : MonoBehaviour {
 	private Vector3 move_dir;
 	public Vector3 move_toward;
 	private GameObject pie;
-	public float damage = .9999f;
+	private float damage = .999f;
 	private bool on_pie = false;
+	public GameObject squeak;
+
+	private bool moved;
+	private bool tapped;
 	
 	// Use this for initialization
 	void Start () {
@@ -18,6 +22,26 @@ public class mouse_controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		for (int i = 0; i < Input.touchCount; i++) {
+			if (Input.GetTouch (i).phase == TouchPhase.Began) {
+				moved = false;
+			} else if (Input.GetTouch (i).phase == TouchPhase.Moved) {
+				moved = true;
+			} else if (Input.GetTouch (i).phase == TouchPhase.Ended) {
+				if (moved == true && tapped == true) {
+					GetComponent<SpriteRenderer>().color = Color.red;
+					move_speed = 2;
+					damage = .9994f;
+				} else if (tapped == true && moved == false) {
+					GameObject swt = (GameObject)Instantiate (squeak, transform.position, transform.rotation);
+					Destroy (swt, 0.5f);
+					Destroy (this.gameObject);
+				}
+				tapped = false;
+			}
+		}
+
+
 		Vector3 current_pos = transform.position;
 		
 		// set direction of movement (unit vector)
@@ -47,8 +71,8 @@ public class mouse_controller : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
-		Destroy (this.gameObject);
-	}
+		tapped = true;
+	} 
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.name == "pie_prefab") {
