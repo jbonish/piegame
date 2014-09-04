@@ -1,26 +1,14 @@
-it's piegame
+It's PieGame
 =======
-
-ben's notes:
-
-	things that need doing:
-		1.  images.  we need to fix the fly one (and add dynamite), maybe change the
-		wood background to a picnic blanket on grass or something, fix the transparency
-		of the pie, add an explosion animation sprite sheet (i put in two, but we
-		need to play around with them) and change any images we dont like.
-
-		
-		2.  damage.  right now the flies do periodic damage and the mice do continuous
-		which i like but we need to decide if we want to damage the pie via just making
-		it smaller or actually taking out pieces. 
-
-		3.  intro/game over screens.  no idea how to go about doing these but i bet 
-		unity has a simple way.
-	
-		4.  some method of score keeping.  it could just be time survived?
+By Ben Helm, Dave Taylor and James Bonish
 
 
-		5.  actually use phone input not just mouse clicking.
+What is PieGame about?
 
-		6.  in the enemy spawner make the spawn rate speed up as the game goes on. 
-		maybe also make the enemies move faster?  or do more damage?
+Pie Game is a game about preserving your pie and staying alive. Just like real life! You are an ant who has found a delicious pie. Evil flies and mice want to eat your pie so you must defend it for as long as you can.
+
+How do I play?
+
+You play by staying alive for as long as you can. To defeat a mouse you must tap it. To defeat a fly you must swipe it away. Don’t mix these up because swiping a mouse or tapping a fly will only make them angry and want to take more of your pie. Save your pie and defeat these vile creatures.
+
+FOR THE COLONY!!!
